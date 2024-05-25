@@ -1987,6 +1987,15 @@ caption {
   color: #6c757d;
   text-align: left; }
 
+
+
+.page-active {
+    background-color: blue !important;
+    color:white !important;
+}
+
+
+
 th {
   text-align: inherit;
   text-align: -webkit-match-parent; }

@@ -89,18 +89,17 @@ header nav ul li .fa-search {
 header nav ul li i, header nav ul li span {
   cursor: pointer;
 }
-
 header nav ul li ul {
-  -webkit-transition: opacity .3s;
-  transition: opacity .3s;
-  background-color: #fff;
-  position: absolute;
-  top: 115px;
-  left: 0;
-  width: 228px;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 2;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+    background-color: #fff;
+    position: absolute;
+    top: 115px;
+    left: 0;
+    width: 228px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
 }
 
 header nav ul li ul li {

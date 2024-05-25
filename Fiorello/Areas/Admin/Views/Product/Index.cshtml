@@ -42,17 +42,42 @@
             <div class="paginate-area  mt-4">
                 <nav aria-label="...">
                     <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
 
+                        @if (ViewBag.currentPage > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" asp-action="Index" asp-route-page="@(ViewBag.currentPage-1)">Previous</a>
+
+                            </li>
+                        }
+                        else
+                        {
+
+                            <li class="page-item disabled">
+                                <a class="page-link" asp-action="Index" asp-route-page="@(ViewBag.currentPage-1)">Previous</a>
+
+                            </li>
+                        }
                         @for (int i = 1; i <= @ViewBag.pageCount; i++)
                         {
-                            <li class="page-item @(ViewBag.currentPage == i ? "disabled" : "") "><a class="page-link @(ViewBag.currentPage == i ? "paginate-active" : "")" asp-action="Index" asp-route-page="@i">@i</a></li>
+                            <li class="page-item @(ViewBag.currentPage == i ? "disabled" : "") ">
+                                <a class="page-link @(ViewBag.currentPage == i ? "page-active" : "")" asp-action="Index" asp-route-page="@i">@i</a>
+                            </li>
                         }
 
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
+
+                        <li class="page-item ">
+                            @if (ViewBag.currentPage < ViewBag.pageCount)
+                            {
+                                <a class="page-link" asp-action="Index" asp-route-page="@(ViewBag.currentPage+1)">Next</a>
+
+                            }
+                            else
+                            {
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                            }
                         </li>
                     </ul>
                 </nav>
